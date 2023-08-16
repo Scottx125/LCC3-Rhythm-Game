@@ -11,13 +11,18 @@ public class ButtonController : MonoBehaviour
     private Material pressedMat;
     [SerializeField]
     private KeyCode buttonForPress;
+    [SerializeField]
+    private GameObject _objToSpawn;
+    [SerializeField]
+    private bool _creatorMode;
 
+    private Transform _beatScroller;
     private List<Renderer> buttonObjects;
     // Start is called before the first frame update
     void Start()
     {
         buttonObjects = GetComponentsInChildren<Renderer>().ToList();
- 
+        _beatScroller = FindObjectOfType<BeatScroller>().transform;
     }
 
     // Update is called once per frame
@@ -26,6 +31,10 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(buttonForPress))
         {
             SetMaterial(pressedMat);
+            if (_creatorMode)
+            {
+                Instantiate(_objToSpawn, transform.position, _objToSpawn.transform.rotation, _beatScroller);
+            }
         }
         if (Input.GetKeyUp(buttonForPress))
         {

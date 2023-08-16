@@ -39,7 +39,7 @@ public class NoteObject : MonoBehaviour
                         GameManager.instance.GoodHit();
                         Instantiate(_goodHitEffect, transform.position + new Vector3(0, 0, _effectSpawnOffset), _goodHitEffect.transform.rotation);
                         break;
-                    case float value when value > 0.05f:
+                    case float value when value > Mathf.Epsilon:
                         GameManager.instance.PerfectHit();
                         Instantiate(_perfectHitEffect, transform.position + new Vector3(0, 0, _effectSpawnOffset), _perfectHitEffect.transform.rotation);
                         break;
