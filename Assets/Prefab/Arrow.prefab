@@ -47,7 +47,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5514569695988320466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canBePressed: 0
-  _keyToPress: 0
+  _keyToPress: 276
+  _effectSpawnOffset: -1
+  _hitEffect: {fileID: 1837889543357765102, guid: 1c571bad490a0b8429bfed8316decd23, type: 3}
+  _goodHitEffect: {fileID: 399331699441732744, guid: 1dd6689df11568f4690465ed73f78668, type: 3}
+  _perfectHitEffect: {fileID: 7845984431704849213, guid: 5c25ece5d47224742a717a98690429b0, type: 3}
+  _missEffect: {fileID: 4806310416175720877, guid: c18405cf05c8c4644895367203c2f220, type: 3}
 --- !u!1 &6143612301320336103
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +96,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6143612301320336103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +278,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2059
+  m_VersionIndex: 2122
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -396,7 +401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7752900126909091524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []

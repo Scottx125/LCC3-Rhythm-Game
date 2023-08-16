@@ -16,7 +16,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int _currentScore;
     [SerializeField]
-    private int _scorePerNote = 100;
+    private int _scorePerNormalNote = 100;
+    [SerializeField]
+    private int _scorePerGoodNote = 200;
+    [SerializeField]
+    private int _scorePerPerfectNote = 400;
     [SerializeField]
     private int _currentMultilpier = 1;
     [SerializeField]
@@ -50,9 +54,6 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
-        Debug.Log("hit note");
-        _currentScore += _scorePerNote * _currentMultilpier;
-        
         if (_currentMultilpier - 1 < _multiplierThreashholds.Length)
         {
             _comboTracker++;
@@ -66,9 +67,27 @@ public class GameManager : MonoBehaviour
         _multiplierText.text = "Multiplier: x" + _currentMultilpier;
         _scoreText.text = "Score: " + _currentScore;
     }
+    public void NormalHit()
+    {
+        Debug.Log("Normal hit");
+        _currentScore += _scorePerNormalNote * _currentMultilpier;
+        NoteHit();
+    }
+    public void GoodHit()
+    {
+        Debug.Log("Good hit");
+        _currentScore += _scorePerGoodNote * _currentMultilpier;
+        NoteHit();
+    }
+    public void PerfectHit()
+    {
+        Debug.Log("Perfect Hit");
+        _currentScore += _scorePerPerfectNote * _currentMultilpier;
+        NoteHit();
+    }
     public void MissedNote()
     {
-        Debug.Log("missed note");
+        Debug.Log("Missed note");
         _comboTracker = 0;
         _currentMultilpier = 1;
         _multiplierText.text = "Multiplier: x" + _currentMultilpier;
